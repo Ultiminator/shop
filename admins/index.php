@@ -21,18 +21,15 @@ if(!isset($_SESSION['loggedin'])){
     <table>
         <tr>
             <td>
-                <a href="AddNewItem">Add new item</a>
+                <a href="Items">items</a>
             </td>
             <td>
-                <a href="Items">items</a>
+                <a href="">Create order</a>
             </td>
         </tr>
         <tr>
             <td>
                 <a href="">Add stock</a>
-            </td>
-            <td>
-                <a href="">Create order</a>
             </td>
         </tr>
         <tr>

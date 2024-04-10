@@ -90,6 +90,8 @@ $maxPrice = $row['max'];
     </select>
     <button onclick="loadItems()">load</button>
 
+    <a href="../AddNewItem/">Add New Item</a>
+
     <table id="result"></table>
 
 </body>

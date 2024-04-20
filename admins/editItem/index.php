@@ -21,15 +21,7 @@ if(!$result){
     die("error while checking database");
 }
 $item = mysqli_fetch_assoc($result);
-//get images ids
-/* $query = "select * from images where itemId = '$itemId'";
-$result = mysqli_query($dbConn, $query);
-if(!$result){
-    die("error while checking database");
-}
-while ($row = mysqli_fetch_assoc($result)){
-    $images[] = $row['id'];
-} */
+
 //read describtion file
 $dir = "../../items/" . $itemId;
 //this will create the directory if not present for some reason

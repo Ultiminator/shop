@@ -95,12 +95,13 @@ function invalidData($itemId){
         echo ": " . $shopName;
         ?>
     </title>
+    <script src="Scripts.js"></script>
 </head>
 <body>
     <table class="imgContainer" id="imgContainer">
         <tr>
-            <td id="imgDisplay" colspan="5">
-                <img src="<?php echo $dir . "/" . $images['0'];?>" style="width: 500px;">
+            <td colspan="5">
+                <img src="<?php echo $dir . "/" . $images['0'];?>" id="imgDisplay">
             </td>
         </tr>
         <tr>
@@ -110,7 +111,7 @@ function invalidData($itemId){
                     $imagePath = $dir . "/" . $image;
                     echo "<img src='$imagePath' ";
                     echo "style='width: 100px;' ";
-                    echo "onclic='displayImage($imagePath)'>";
+                    echo "onclick='displayImage(\"$imagePath\")'>";
                 }
                 ?>
             </td>
@@ -153,6 +154,8 @@ function invalidData($itemId){
             }
             ?>
         </h2>
+        <button onclick="addToCart(<?php echo $itemId;?>)">Add to Cart</button>
+        <button onclick="buyNow(<?php echo $itemId;?>)">Buy Now</button>
     </div>
 </body>
 </html>

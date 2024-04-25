@@ -17,6 +17,8 @@ $dbConn = mysqli_connect($mysqlHost, $mysqlUser, $mysqlPassword, $dbName);
 if (mysqli_connect_errno()){
     die("error while connecting to database <a href='../'>home</a>");
 }
+
+//get item info
 $query = "select * from items where id = '$itemId'";
 $result = mysqli_query($dbConn, $query);
 if(!$result){
@@ -50,8 +52,15 @@ if (file_exists($fileName)){
     $description = "couldn't find description";
 }
 
-echo $itemId . $item['id'] . $description;
-
+//get the images Ids from database
+$query = "select * from images where itemId = '$itemId' order by id";
+$result = mysqli_query($dbConn, $query);
+if(!$result){
+    die("error while checking database <a href='../'>home</a>");
+}
+while ($row = mysqli_fetch_assoc($result)){
+    $images[] = $row['id'] . "." . $row['extension'];
+}
 
 function handle_data($data) {
     //this converts it to html special characters to prevent html or js injection
@@ -74,3 +83,76 @@ function invalidData($itemId){
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?php
+        echo $item['name'];
+        echo ": " . $shopName;
+        ?>
+    </title>
+</head>
+<body>
+    <table class="imgContainer" id="imgContainer">
+        <tr>
+            <td id="imgDisplay" colspan="5">
+                <img src="<?php echo $dir . "/" . $images['0'];?>" style="width: 500px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php
+                foreach ($images as $image){
+                    $imagePath = $dir . "/" . $image;
+                    echo "<img src='$imagePath' ";
+                    echo "style='width: 100px;' ";
+                    echo "onclic='displayImage($imagePath)'>";
+                }
+                ?>
+            </td>
+        </tr>
+    </table>
+    <div class="itemInfo">
+        <h1>
+            <?php echo $item['name']; ?>
+        </h1>
+        <span>
+            <?php
+            if ($item['rating'] != 0){
+                echo $item['rating'];
+            } 
+            ?>
+        </span>
+        <span>
+            <?php
+            echo "Brand: " . $item['brand'];
+            ?>
+        </span>
+        <span>
+            <?php
+            echo "Category: " . $item['tag'];
+            ?>
+        </span>
+        <p>
+            <?php
+            echo $description;
+            ?>
+        </p>
+        <h2>
+            <?php
+            if ($item['discount'] == 0){
+                echo $item['price'];
+            }else{
+                $discount = $item['price'] * $item['discount'] / 100;
+                $price = $item['price'] - $discount;
+                echo $price;
+            }
+            ?>
+        </h2>
+    </div>
+</body>
+</html>

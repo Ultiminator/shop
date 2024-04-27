@@ -69,7 +69,6 @@ function invalidData($email, $password){
     if (strlen($password) < 8 || strlen($password) > 30){
         return "password should be 8 to 30 characters!";
     }
-    //added space to the regex to allow spaces
     if (!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email)){
         return "wrong email!";
     }

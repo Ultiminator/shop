@@ -6,10 +6,24 @@ function displayImage(imagePath){
 
 //function to add the item to the cart
 function addToCart(itemId){
-    //todo
+    let qnty = document.getElementById("amount").value;
+    let resultSpan = document.getElementById("result");
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        resultSpan.innerHTML = this.responseText;
+        if(this.responseText == "success"){
+            if(confirm("item added successfuly, do you want to go to the chart?")){
+                window.location.href = "./Accounts/chart/";
+            }
+        }
+    }
+    xhr.open("POST", "./Accounts/chart/addItem.php");
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send("itemId=" + itemId + "&qnty=" + qnty);
 }
 
-//function to add the item to the cart
-function addToCart(itemId){
+//function to buy the item now
+function buyNow(itemId){
     //todo
 }

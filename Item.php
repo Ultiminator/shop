@@ -154,8 +154,12 @@ function invalidData($itemId){
             }
             ?>
         </h2>
+        <label for="amount">Amount: </label>
+        <input type="number" name="amount" id="amount" 
+               value="1" min="1" max="<?php echo $item['amount']?>">
         <button onclick="addToCart(<?php echo $itemId;?>)">Add to Cart</button>
         <button onclick="buyNow(<?php echo $itemId;?>)">Buy Now</button>
+        <span id="result"></span>
     </div>
 </body>
 </html>

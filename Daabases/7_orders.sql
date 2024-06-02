@@ -2,6 +2,7 @@ drop table orders;
 create table orders(
     id int auto_increment,
     userId int not null,
+    userName varchar(100) not null,
     adress varchar(255) not null,
     phone varchar(30),
     price int not null,
@@ -13,8 +14,8 @@ create table orders(
     foreign key (userId) references accounts(id)
 );
 
-insert into orders(userId, adress, phone, price) values(
-    100000, 'santimay - mitghamr - dakahlia',
+insert into orders(userId, userName, adress, phone, price) values(
+    100000, 'ahmed salah', 'santimay - mitghamr - dakahlia',
     '01016915810', 500
 );
 

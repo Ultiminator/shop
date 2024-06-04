@@ -1,7 +1,7 @@
 <?php
 //check if logged in
 session_start();
-if (!isset($_SESSION['loggedin'])){
+if (!isset($_SESSION['adminId'])){
     header('location: ../login');
 }
 //check if there is item 

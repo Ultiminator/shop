@@ -91,6 +91,9 @@ foreach ($items as $itemId => $item){
     $query .= "insert into orderedItems(orderId, itemId, quantity, price) ";
     $query .= "values($orderId, $itemId, " . $item['qnty'];
     $query .= ", " . $item['price'] . "); ";
+    //this to subtract the quantity of the items from the store
+    $newAmount = $item['available'] - $item['qnty'];
+    $query .= "update items set amount = '$newAmount' where id = '$itemId'; ";
 }
 if(!mysqli_multi_query($dbConn, $query)){
     die("error while ading the items to ordered items in database");

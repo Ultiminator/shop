@@ -14,7 +14,7 @@
         return to: 
         <a href="../">Home Page</a> 
         or see your 
-        <a href="../Accounts/chart/">orders</a>
+        <a href="../Accounts/Orders/">orders</a>
     </p>
 </body>
 </html>

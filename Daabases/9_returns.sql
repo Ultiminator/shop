@@ -5,6 +5,7 @@ create table returned(
     orderedItemId int not null,
     quantity int default 1,
     stat int default 0,
+    cause text not null,
     joindate date default (current_date()),
     jointime time default (current_time()),
     primary key (id),
@@ -12,6 +13,6 @@ create table returned(
     foreign key (orderedItemId) references orderedItems(id)
 );
 
-insert into returned (orderId, orderedItemId) values(1,2);
+insert into returned (orderId, orderedItemId, cause) values(1,2, "battery");
 
 select * from returned;

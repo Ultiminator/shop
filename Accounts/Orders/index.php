@@ -75,6 +75,7 @@ foreach ($orders as $key => $order){
         </tr>
         <?php
         foreach ($orders as $order){
+            echo "<tr>";
             echo "<td>" . $order['id'] . "</td>";
             echo "<td>";
             foreach ($order['items'] as $item) {
@@ -118,20 +119,20 @@ foreach ($orders as $key => $order){
                     echo "<td>Complete the order first</td>";
                     break;
                 case 4 :
-                    echo "<td>Completed</td>";
-                    echo "<td>";
-                    echo "<a href='return?id=" . $order['id'];
-                    echo "' target='_blanck'>Return Items</a>";
-                    echo "</td>";
+                    echo "<td>Delivered</td>";
+                    echo "<td>Enjoy</td>";
                     break;
                 case 5 :
                     echo "<td>Cancelled</td>";
-                    echo "<td>sorry for that</td>";
+                    echo "<td>Sorry for that</td>";
                     break;
                 
             }
+            echo "</tr>";
         }
         ?>
     </table>
+    <a href="../returns/return.php">request a return</a>
+    <a href="../returns/"> Manage returns</a>
 </body>
 </html>

@@ -16,12 +16,13 @@ if (mysqli_connect_errno()){
 }
 $query = "select id from orders where userid = '$userId' ";
 $query .= "and joindate <= current_date() and joindate >= current_date()-40 ";
+$query .= "and stat = 4";
 $result = mysqli_query($dbConn, $query);
 if (!$result){
     die("error while checking oredrs in database");
 }
 if (mysqli_num_rows($result) == 0){
-    $ms = "you can only return items from orders in the last month ";
+    $ms = "you can only return items from orders delivered in the last month ";
     $link = "<a href='../../'>start shopping</a>";
     die($ms . $link);
 }

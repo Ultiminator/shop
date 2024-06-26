@@ -98,6 +98,8 @@ foreach ($items as $itemId => $item){
 if(!mysqli_multi_query($dbConn, $query)){
     die("error while ading the items to ordered items in database");
 }
+//store the last addedd order id in the session to use it in congrats page
+$_SESSION['orderId'] = $orderId;
 echo "success";
 
 //close connection with db

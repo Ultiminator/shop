@@ -25,3 +25,6 @@ function removeItem(itemId){
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send("itemId=" + itemId);
 }
+function checkout(){
+    location.href = "../../checkout";
+}

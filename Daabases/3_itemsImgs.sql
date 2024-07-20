@@ -1,7 +1,7 @@
 drop table images;
 create table images(
     id int auto_increment,
-    extension varchar(10) not null,
+    extension varchar(10),
     itemId int not null,
     primary key (id),
     foreign key (itemId) references items(id)

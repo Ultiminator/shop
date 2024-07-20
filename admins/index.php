@@ -24,7 +24,7 @@ if(!isset($_SESSION['adminId'])){
                 <a href="Items">items Panel</a>
             </td>
             <td>
-                <a href="">Orders</a>
+                <a href="./orders/">Orders</a>
             </td>
         </tr>
         <tr>

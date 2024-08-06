@@ -32,7 +32,7 @@ if(!isset($_SESSION['adminId'])){
                 <a href="">create order</a>
             </td>
             <td>
-                <a href="">Returns</a>
+                <a href="./returns/">Returns</a>
             </td>
         </tr>
         <tr>

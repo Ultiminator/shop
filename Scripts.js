@@ -124,7 +124,7 @@ function createItem(id, name, img, price, discount) {
     if (discount) {
         const discountBdge = document.createElement("span");
         discountBdge.className = "discountBadge";
-        discountBdge.style.backgroundImage = "./items/discount.png";
+        discountBdge.style.backgroundImage = "./discount.png";
         const discountText = document.createTextNode(discount + "%");
         discountBdge.appendChild(discountText);
         card.appendChild(discountBdge);

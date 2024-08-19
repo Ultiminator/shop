@@ -68,7 +68,7 @@ foreach ($items as $key => $item) {
     $query .= " order by id asc";
     $result = mysqli_query($dbConn, $query);
     if (!$result || mysqli_num_rows($result) == 0) {
-        $items[$key]['img'] = "../default.jpg";
+        $items[$key]['img'] = "../../default.png";
     }else {
         $row = mysqli_fetch_assoc($result); //first image only
         $items[$key]['img'] = $row['id'] . "." . $row['extension'];

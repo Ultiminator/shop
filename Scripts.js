@@ -101,7 +101,7 @@ function createItem(id, name, img, price, discount) {
 
     //lets create the image tag the will show an image of the item
     const imgTag = document.createElement("img");
-    imgTag.className = "cardTable";
+    imgTag.className = "itemImage";
     imgTag.src = "./items/" + id + "/" + img;
     //lets append it to the link
     card.appendChild(imgTag);
@@ -113,7 +113,7 @@ function createItem(id, name, img, price, discount) {
     nameSpan.appendChild(nameText);
     card.appendChild(nameSpan);
 
-    // lets create the name span
+    // lets create the price span
     const priceSpan = document.createElement("span");
     priceSpan.className = "itemPrice";
     const priceText = document.createTextNode(price);
@@ -124,8 +124,7 @@ function createItem(id, name, img, price, discount) {
     if (discount) {
         const discountBdge = document.createElement("span");
         discountBdge.className = "discountBadge";
-        discountBdge.style.backgroundImage = "./discount.png";
-        const discountText = document.createTextNode(discount + "%");
+        const discountText = document.createTextNode("-" + discount + "%");
         discountBdge.appendChild(discountText);
         card.appendChild(discountBdge);
     }

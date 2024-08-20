@@ -48,12 +48,14 @@ if ($result) {
         ?>
     </title>
     <script src="./Scripts.js"></script>
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body onload="loadItems()">
     <!-- menu bar here -->
 
     <!-- sidde navigtion for filters -->
-    <div id="sidebar" style="width: 200px;">
+    <div id="sidebar">
+        <p>Filters</p>
         <!-- options for view -->
         <fieldset>
             <legend>View: </legend>
@@ -115,7 +117,7 @@ if ($result) {
         <fieldset>
             <legend>Price: </legend>
             <?php
-            echo "<label for='min'>Min : </label>";
+            echo "<label for='min'>Min: </label>";
             echo "<input type='number' name='min' id='min' min='$min' max='$max' value='$min'>";
             echo "<br>";
             echo "<label for='max'>Max: </label>";

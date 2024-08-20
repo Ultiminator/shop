@@ -1,7 +1,7 @@
 <?php
 //shop info
 $shopName = "Ulti";
-$currency = "EGP";
+$currency = "$";
 //Database info (mysql server)
 $mysqlHost = 'localhost';
 $mysqlUser = 'root';

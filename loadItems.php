@@ -62,8 +62,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     $items[] = $row;
 }
 
-// now lets get the image of every item
+// for each item do the following
 foreach ($items as $key => $item) {
+    //get the first image of the item from images table
     $query = "select * from images where itemId = " . $item['id'];
     $query .= " order by id asc";
     $result = mysqli_query($dbConn, $query);
@@ -72,6 +73,11 @@ foreach ($items as $key => $item) {
     }else {
         $row = mysqli_fetch_assoc($result); //first image only
         $items[$key]['img'] = $row['id'] . "." . $row['extension'];
+    }
+    //calculate the price after discount if there is any
+    if ($item['discount'] > 0){
+        $discount = ($item['discount'] / 100) * $item['price'];
+        $items[$key]['price'] = ($item['price'] - $discount) . " $currency";
     }
 }
 

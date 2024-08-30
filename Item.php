@@ -95,7 +95,8 @@ function invalidData($itemId){
         echo ": " . $shopName;
         ?>
     </title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./Styles/Main.css">
+    <link rel="stylesheet" href="./Styles/Structures.css">
     <script src="Scripts.js"></script>
 </head>
 <body>
@@ -110,35 +111,39 @@ function invalidData($itemId){
                 <?php
                 foreach ($images as $image){
                     $imagePath = $dir . "/" . $image;
+                    // echo "<td>";
                     echo "<img src='$imagePath' ";
-                    echo "style='width: 100px;' ";
+                    echo "style='width: 100px; height: 100px;' ";
                     echo "onclick='displayImage(\"$imagePath\")'>";
+                    // echo "</td>";
                 }
                 ?>
             </td>
         </tr>
     </table>
-    <div class="itemInfo">
+    <div class="itemInfo" id="itemInfo">
         <h1>
             <?php echo $item['name']; ?>
         </h1>
-        <span>
+        <p>
             <?php
-            if ($item['rating'] != 0){
-                echo $item['rating'];
-            } 
+            if ($item['rating'] == 0){
+                echo "rating: Not rated yet";
+            } else {
+                echo "rating: " . $item['rating'];
+            }
             ?>
-        </span>
-        <span>
+        </p>
+        <p>
             <?php
             echo "Brand: " . $item['brand'];
             ?>
-        </span>
-        <span>
+        </p>
+        <p>
             <?php
             echo "Category: " . $item['tag'];
             ?>
-        </span>
+        </p>
         <p>
             <?php
             echo $description;
@@ -147,11 +152,11 @@ function invalidData($itemId){
         <h2>
             <?php
             if ($item['discount'] == 0){
-                echo $item['price'];
+                echo $item['price'] . " $currency";
             }else{
                 $discount = $item['price'] * $item['discount'] / 100;
                 $price = $item['price'] - $discount;
-                echo $price;
+                echo $price . " $currency";
             }
             ?>
         </h2>
@@ -160,6 +165,7 @@ function invalidData($itemId){
                value="1" min="1" max="<?php echo $item['amount']?>">
         <button onclick="addToCart(<?php echo $itemId;?>)">Add to Cart</button>
         <button onclick="buyNow(<?php echo $itemId;?>)">Buy Now</button>
+        <br>
         <span id="result"></span>
     </div>
 </body>

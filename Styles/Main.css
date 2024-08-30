@@ -18,7 +18,7 @@
 /* overriding some global styles to avoid headache */
 * {
     box-sizing: border-box;
-    /* bsorder: 1px rgba(127, 6, 131, 0.274) solid; */
+    /* border: 1px rgba(127, 6, 131, 0.274) solid; */
     margin: 0;
     font-family: "noto reg";
     color: #171C25;

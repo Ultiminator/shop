@@ -31,3 +31,41 @@ div#itemsContianer {
 div.centering {
     text-align: center;
 }
+
+table#imgContainer {
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    width: 33%;
+    text-align: center;
+    padding: 0px;
+    border-spacing: 0px;
+    border: 0px;
+    box-shadow: none;
+}
+table#imgContainer td, table#imgContainer tr {
+    padding: 0px;
+    width: 10%;
+}
+table#imgContainer img {
+    object-fit: cover;
+}
+table#imgContainer img#imgDisplay {
+    width: 100%;
+    height: 50vh;
+    object-fit: contain;
+}
+
+div#itemInfo {
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    width: 66%;
+    vertical-align: top;
+    padding: 10px 30% 10px 10px;
+}
+div#itemInfo *{
+    margin: 20px auto;
+    text-align: left;
+}
+

@@ -1,0 +1,28 @@
+div#displayImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #171c25c4;
+    text-align: center;
+    align-content: center;
+}
+
+div#displayImg button {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+
+div#displayImg img {
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}

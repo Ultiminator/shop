@@ -23,10 +23,10 @@ if (mysqli_connect_errno()){
 }
 $query = "select * from items where rating >= $rating";
 $query .= " and price between $min and $max";
-if ($offer) {
+if ($offer == "true") {
     $query .= " and discount >= 1";
 }
-if ($stock) {
+if ($stock == "true") {
     $query .= " and amount >= 1";
 }
 if (isset($cats)){
@@ -78,6 +78,8 @@ foreach ($items as $key => $item) {
     if ($item['discount'] > 0){
         $discount = ($item['discount'] / 100) * $item['price'];
         $items[$key]['price'] = ($item['price'] - $discount) . " $currency";
+    }else {
+        $items[$key]['price'] = $item['price'] . " $currency";
     }
 }
 

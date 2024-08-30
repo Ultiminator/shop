@@ -95,12 +95,13 @@ function invalidData($itemId){
         echo ": " . $shopName;
         ?>
     </title>
+    <link rel="stylesheet" href="styles.css">
     <script src="Scripts.js"></script>
 </head>
 <body>
     <table class="imgContainer" id="imgContainer">
         <tr>
-            <td colspan="5">
+            <td>
                 <img src="<?php echo $dir . "/" . $images['0'];?>" id="imgDisplay">
             </td>
         </tr>

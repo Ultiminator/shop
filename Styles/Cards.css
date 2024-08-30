@@ -1,0 +1,87 @@
+/* stylize each card */
+.itemCard {
+    /* adding block attribute to controle their width while preserving inline attr */
+    display: inline-block;
+    width: 200px;
+    height: 270px;
+    /* relativve position won't affect them but make the card an ancor for its child
+       so that any child with absolute position is positioned according to the card */
+    position: relative;
+    /* prevent unexpected scroll */
+    overflow: hidden;
+    /* separating them by 20px spaces 10 from each card and 10 from its next */
+    margin: 10px 10px;
+    /* style */
+    /* border: 1px #E84A27 solid; */
+    font-family: "noto bold", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0px;
+    color: #171C25;
+    border-radius: 7px;
+    background-color: #fff2f0;
+    box-shadow: 0px 0px 5px 1px #E4B9B3;
+    /* animate the scale which happen on hover */
+    transition: transform 250ms;
+}
+/* scale the card on hover */
+.itemCard:hover {
+    transform: scale(110%);
+}
+
+/* make all card contents like block to occupy all the line */
+.itemCard * {
+    display: block;
+}
+
+.itemImage {
+    /* width 100% of the card and 75% of its height, 
+       leaving 25% for the name and price 
+       widht 100% is required for object fit property
+       althogh the block element occupy 100% of prent by default */
+    width: 100%;
+    height: 75%;
+    /* center the image in the specified width and height
+       and prevent its stretching 
+       note that this causes unexpected behavior without width 100% property*/
+    object-fit: cover;
+    border-radius: 0px;
+}
+
+.itemName {
+    height: 15%;
+    /* this to align the text vertically */
+    align-content: center;
+    /* this three properties work together to replace the overflowed
+       text with dots like this "item name is int.." */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "noto bold", sans-serif;
+}
+
+.itemPrice {
+    height: 10%;
+    font-size: 16px;
+    font-family: "noto bold", sans-serif;
+}
+
+.discountBadge {
+    /* absolute position anchored to the nearest relative parent
+       if no relative parent, it will be anchored to the body */
+    position: absolute;
+    left: 0px;
+    top: 15px;
+    /* dimensions is the same as the used background image */
+    width: 48px;
+    height: 26px;
+    /* trying to center text vertically as the align content property
+       didn't work well this time */
+    line-height: 22px;
+    /* trying to center it horizontally */
+    padding-right: 10px;
+    /* style */
+    background-image: url(../discount.png);
+    color: white;
+    font-family: "noto bold", sans-serif;
+}

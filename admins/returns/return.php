@@ -57,10 +57,13 @@ $return = mysqli_fetch_assoc($result);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Return</title>
     <script src="./script.js"></script>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
 </head>
 <body>
     <!-- table to show order info -->
-     <table>
+     <table class="alternate">
         <tr>
             <td>Return ID</td>
             <td>
@@ -188,21 +191,23 @@ $return = mysqli_fetch_assoc($result);
 
 
     <!-- select input and button to change the return status -->
-    <label for="status">Change return status: </label>
-    <select name="status" id="status">
-        <?php
-        //this to not allow admins to change cancelled orders to void dilemmas with stock
-        $tempArr = ["Pending", "Confirmed", "Checking", "Accepted", "Refunded", "Rejected"];
-        foreach ($tempArr as $key => $value) {
-            if ($return['stat'] == $key) {
-                continue;
+    <div class="centering">
+        <label for="status">Change return status: </label>
+        <select name="status" id="status">
+            <?php
+            //this to not allow admins to change cancelled orders to void dilemmas with stock
+            $tempArr = ["Pending", "Confirmed", "Checking", "Accepted", "Refunded", "Rejected"];
+            foreach ($tempArr as $key => $value) {
+                if ($return['stat'] == $key) {
+                    continue;
+                }
+                echo "<option value='$key'>$value</option>";
             }
-            echo "<option value='$key'>$value</option>";
-        }
-        ?>
-    </select>
-    <button onclick="changeStatus(<?php echo $returnId; ?>)">Confirm</button>
-    <span id="statusResult"></span>
+            ?>
+        </select>
+        <button onclick="changeStatus(<?php echo $returnId; ?>)">Confirm</button>
+        <span id="statusResult"></span>
+    </div>
 
 </body>
 </html>

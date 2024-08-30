@@ -31,11 +31,11 @@ if(mysqli_num_rows($result) == 0) {
 }
 //prepare the table to display data if present
 echo "<tr>";
-echo "<td>N</td>";
-echo "<td>id</td>";
-echo "<td>Created</td>";
-echo "<td>Status</td>";
-echo "<td>Edit</td>";
+echo "<th>N</th>";
+echo "<th>id</th>";
+echo "<th>Created</th>";
+echo "<th>Status</th>";
+echo "<th>Edit</th>";
 echo "</tr>";
 //print the data
 $count = 1;

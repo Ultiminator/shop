@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['adminId'])){
     header('location: ../login');
 }
-//check if there is item 
+//check if there is item
 if (!isset($_GET['id'])){
     header("location: ../items");
 }
@@ -39,25 +39,40 @@ mysqli_close($dbConn);
         ?>
     </title>
     <script src="./Script.js"></script>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/fullscreenImg.css">
 </head>
 <body onload="loadImages('<?php echo $itemId; ?>')">
-    
-<label for="id">Item Id: </label>
-    <input type="text" disabled name="id" id="id"
-    <?php echo "value='$itemId'"; ?>
-    />
 
-    <label for="name">Item Name: </label>
-    <input type="text" disabled name="name" id="name"
-    <?php echo "value='$itemName'"; ?>
-    />
+    <table>
+        <tr>
+            <td>
+                <label for="id">Item Id: </label>
+            </td>
+            <td>
+                <input type="text" disabled name="id" id="id"
+                <?php echo "value='$itemId'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="name">Item Name: </label>
+            </td>
+            <td>
+                <input type="text" disabled name="name" id="name"
+                <?php echo "value='$itemName'"; ?>
+                />
+            </td>
+        </tr>
+    </table>
 
     <table id="imagesTable">
     </table>
-    <div id="displayImg" style="display: none;">
-        <button onclick="hideImg()">x</button>
+    <div id="displayImg" style="display: none;" onclick="hideImg()">
+        <button onclick="hideImg()">Close</button>
         <img src='' id="imgDisplay">
     </div>
-    
+
 </body>
 </html>

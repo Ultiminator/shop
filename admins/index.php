@@ -16,6 +16,7 @@ if(!isset($_SESSION['adminId'])){
         echo $_SESSION['adminName'];
         ?>
     </title>
+    <link rel="stylesheet" href="../Styles/Main.css">
 </head>
 <body>
     <table>

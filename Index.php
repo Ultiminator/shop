@@ -48,7 +48,9 @@ if ($result) {
         ?>
     </title>
     <script src="./Scripts.js"></script>
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="./Styles/Main.css">
+    <link rel="stylesheet" href="./Styles/Structures.css">
+    <link rel="stylesheet" href="./Styles/Cards.css">
 </head>
 <body onload="loadItems()">
     <!-- menu bar here -->

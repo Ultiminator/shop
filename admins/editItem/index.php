@@ -57,49 +57,100 @@ if (file_exists($fileName)){
         ?>
     </title>
     <script src="Script.js"></script>
+    <link rel="stylesheet" href="../../Styles/Main.css">
 </head>
 <body>
 
-    <label for="id">Item Id: </label>
-    <input type="text" disabled name="id" id="id"
-    <?php echo "value='$itemId'"; ?>
-    />
-
-    <label for="name">Item Name: </label>
-    <input type="text" name="name" id="name"
-    <?php echo "value='" . $item['name'] ."'"; ?>
-    />
-
-    <label for="describtion">Description: </label>
-    <textarea name="describtion" id="description"><?php echo $describtion; ?></textarea>
-
-    <label for="price">price: </label>
-    <input type="number" name="price" min="1" id="price"
-    <?php echo "value='" . $item['price'] ."'"; ?>
-    />
-
-    <label for="discount">discount: </label>
-    <input type="number" name="discount" min="0" max="99" id="discount"
-    <?php echo "value='" . $item['discount'] ."'"; ?>
-    />
-
-    <label for="stock">Stock: </label>
-    <input type="number" name="stock" min="0" id="stock"
-    <?php echo "value='" . $item['amount'] ."'"; ?>
-    />
-
-    <label for="brand">Brand: </label>
-    <input type="text" name="brand" id="brand"
-    <?php echo "value='" . $item['brand'] ."'"; ?>
-    />
-
-    <label for="cat">Category: </label>
-    <input type="text" name="cat" id="cat"
-    <?php echo "value='" . $item['tag'] ."'"; ?>
-    />
-
-    <button onclick="editItem()">Save</button>
-    <span id="result"></span>
+    <table>
+        <tr>
+            <td>
+                <label for="id">Item Id: </label>
+            </td>
+            <td>
+                <input type="text" disabled name="id" id="id"
+                <?php echo "value='$itemId'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="name">Item Name: </label>
+            </td>
+            <td>
+                <input type="text" name="name" id="name"
+                <?php echo "value='" . $item['name'] ."'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="describtion">Description: </label>
+            </td>
+            <td>
+                <textarea name="describtion" id="description"><?php echo $describtion; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="price">price: </label>
+            </td>
+            <td>
+                <input type="number" name="price" min="1" id="price"
+                <?php echo "value='" . $item['price'] ."'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="discount">discount: </label>
+            </td>
+            <td>
+                <input type="number" name="discount" min="0" max="99" id="discount"
+                <?php echo "value='" . $item['discount'] ."'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="stock">Stock: </label>
+            </td>
+            <td>
+                <input type="number" name="stock" min="0" id="stock"
+                <?php echo "value='" . $item['amount'] ."'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="brand">Brand: </label>
+            </td>
+            <td>
+                <input type="text" name="brand" id="brand"
+                <?php echo "value='" . $item['brand'] ."'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="cat">Category: </label>
+            </td>
+            <td>
+                <input type="text" name="cat" id="cat"
+                <?php echo "value='" . $item['tag'] ."'"; ?>
+                />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="editItem()">Save</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span id="result"></span>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>

@@ -14,37 +14,43 @@ if(!isset($_SESSION['adminId'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders</title>
     <script src="./script.js"></script>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
 </head>
 <body>
-    <label for="orderId">orderId</label>
-    <input type="text" id="orderId" name="orderId">
-    <label for="phone">phone</label>
-    <input type="text" id="phone" name="phone">
-    <label for="status">Status: </label>
-    <select name="status" id="status">
-        <option value="">All</option>
-        <option value="0">Pending</option>
-        <option value="1">Confirmed</option>
-        <option value="2">Ready</option>
-        <option value="3">Delivering</option>
-        <option value="4">Delivered</option>
-        <option value="5">Cancelled</option>
-    </select>
-    <label for="sort">Sort by: </label>
-    <select name="sort" id="sort">
-        <option value="id">Order ID</option>
-        <option value="price">Price</option>
-        <option value="stat">Status</option>
-        <option value="joindate">Date</option>
-    </select>
-    <select name="orderBy" id="orderBy">
-        <option value="asc">Ascending</option>
-        <option value="desc">Descening</option>
-    </select>
 
-    <button onclick="loadOrders()">Load orders</button>
+    <div class="centering">
+        <label for="orderId">orderId</label>
+        <input type="text" id="orderId" name="orderId">
+        <label for="phone">phone</label>
+        <input type="text" id="phone" name="phone">
+        <label for="status">Status: </label>
+        <select name="status" id="status">
+            <option value="">All</option>
+            <option value="0">Pending</option>
+            <option value="1">Confirmed</option>
+            <option value="2">Ready</option>
+            <option value="3">Delivering</option>
+            <option value="4">Delivered</option>
+            <option value="5">Cancelled</option>
+        </select>
+        <label for="sort">Sort by: </label>
+        <select name="sort" id="sort">
+            <option value="id">Order ID</option>
+            <option value="price">Price</option>
+            <option value="stat">Status</option>
+            <option value="joindate">Date</option>
+        </select>
+        <select name="orderBy" id="orderBy">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descening</option>
+        </select>
 
-    <table id="result"></table>
+        <button onclick="loadOrders()">Load orders</button>
+    </div>
+
+    <table id="result" class="alternate"></table>
     
 </body>
 </html>

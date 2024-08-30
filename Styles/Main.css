@@ -1,0 +1,121 @@
+/* define some fonts */
+@font-face {
+    font-family: "noto lite";
+    src: url(NotoSans-VariableFont.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "noto reg";
+    src: url(NotoSans-VariableFont.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "noto bold";
+    src: url(NotoSans-VariableFont.ttf);
+    font-weight: 600;
+}
+
+/* overriding some global styles to avoid headache */
+* {
+    box-sizing: border-box;
+    /* bsorder: 1px rgba(127, 6, 131, 0.274) solid; */
+    margin: 0;
+    font-family: "noto reg";
+    color: #171C25;
+}
+
+input[type=text], input[type=number], input[type=password], option {
+    min-width: 100px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px #E84A27 solid;
+    border-radius: 5px;
+    font-family: "noto bold";
+    margin: 5px 0px;
+}
+
+textarea {
+    border: 1px #E84A27 solid;
+    border-radius: 5px;
+    padding: 5px;
+    width: 400px;
+    height: 200px;
+}
+
+button, select{
+    min-width: 100px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px #E84A27 solid;
+    border-radius: 5px;
+    font-family: "noto bold";
+    background-color: #fff2f0;
+    box-shadow: 1px 1px 1px 0px #E4B9B3;
+    margin: 5px 0px;
+}
+button:hover, select:hover{
+    background-color: #E4B9B3;
+}
+button:active, select:active {
+    background-color: #E84A27;
+    box-shadow: inset -1px -1px 1px 0px #E4B9B3;
+}
+
+table {
+    border-radius: 5px;
+    padding: 5px ;
+    margin: 20px auto;
+    border: 1px #E84A27 solid;
+    border-spacing: 0px;
+    box-shadow: 0px 0px 5px 1px #E4B9B3;
+}
+
+td {
+    padding: 5px;
+}
+td[colspan="2"] {
+    text-align: center;
+}
+th {
+    font-family: "noto bold";
+    padding: 5px;
+}
+
+a {
+    padding: 5px;
+    display: inline-block;
+}
+a:hover {
+    color: #E84A27;
+}
+
+fieldset {
+    /* controlling border. apparantely the shorthand property doesn't work
+       it may be overriden by the browser defaults */
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #E84A27;
+
+    /* some style */
+    margin: 5px auto;
+    text-align: left;
+    font-size: 16px;
+}
+fieldset legend {
+    font-family: "noto bold";
+}
+
+label {
+    /* inline block to control their width */
+    display: inline-block;
+    min-width: 70px;
+    /* separate them slightly from the check boxes and each other */
+    margin: 0 0 5px 5px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "noto bold";
+}
+

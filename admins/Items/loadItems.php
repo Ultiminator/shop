@@ -38,19 +38,19 @@ if(mysqli_num_rows($result) == 0) {
 }
 //prepare the table to display data if present
 echo "<tr>";
-echo "<td>N</td>";
-echo "<td>id</td>";
-echo "<td>name</td>";
-echo "<td>rating</td>";
-echo "<td>brand</td>";
-echo "<td>category</td>";
-echo "<td>price</td>";
-echo "<td>discount</td>";
-echo "<td>stock</td>";
-echo "<td>edit</td>";
-echo "<td>update Images</td>";
-echo "<td>Remove</td>";
-echo "<td>Notes</td>";
+echo "<th>N</th>";
+echo "<th>id</th>";
+echo "<th>name</th>";
+echo "<th>rating</th>";
+echo "<th>brand</th>";
+echo "<th>category</th>";
+echo "<th>price</th>";
+echo "<th>discount</th>";
+echo "<th>stock</th>";
+echo "<th>edit</th>";
+echo "<th>update Images</th>";
+echo "<th>Remove</th>";
+echo "<th>Notes</th>";
 echo "</tr>";
 //print the data
 $count = 1;

@@ -1,0 +1,33 @@
+/* this is the side bar for filtering items */
+div#sidebar {
+    /* fixed position so it doesn't scroll */
+    position: fixed;
+    /* height of the whole view and 250px width */
+    height: 100%;
+    width: 250px;
+    /* prevent unexpected scroll */
+    overflow-x: hidden;
+    /* some styles */
+    font-family: "noto reg", sans-serif;
+    font-size: 22px;
+    color: #171C25;
+    text-align: center;
+    background-color: #fff2f0;
+    box-shadow: 0px 0px 5px 1px #E4B9B3;
+    padding: 10px;
+}
+
+/* container of items cards */
+div#itemsContianer {
+    /* align cards centrally */
+    text-align: center;
+    /* padding to make the space arround the cards consistent with 
+       the space between them */
+    padding: 10px;
+    /* leave space for the fixed side bar (which is 250px wide)*/
+    margin-left: 250px;
+}
+
+div.centering {
+    text-align: center;
+}

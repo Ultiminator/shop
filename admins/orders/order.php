@@ -65,10 +65,13 @@ while ($row = mysqli_fetch_assoc($result)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Order</title>
     <script src="./script.js"></script>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
 </head>
 <body>
     <!-- table to show order info -->
-     <table>
+     <table class="alternate">
         <tr>
             <td>Order ID</td>
             <td>
@@ -157,15 +160,15 @@ while ($row = mysqli_fetch_assoc($result)){
      </table>
 
     <!-- table to show ordered items info  -->
-     <table>
+     <table class="alternate">
         <tr>
-            <td>No.</td>
-            <td>Item ID</td>
-            <td>Item Name</td>
-            <td>Availbale</td>
-            <td>Ordered Quantity</td>
-            <td>Price</td>
-            <td>Return request?</td>
+            <th>No.</th>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Availbale</th>
+            <th>Ordered Quantity</th>
+            <th>Price</th>
+            <th>Return request?</th>
         </tr>
         <!-- iterating thru items -->
         <?php
@@ -198,24 +201,26 @@ while ($row = mysqli_fetch_assoc($result)){
     </table>
 
     <!-- select input and button to change the orer status -->
-    <label for="status">Change order status: </label>
-    <select name="status" id="status">
-        <?php
-        //this to not allow admins to change cancelled orders to void dilemmas with stock
-        if ($order['stat'] == 5) {
-            die();
-        }
-        $tempArr = ["Pending", "Confirmed", "Ready", "Delivering", "Delivered"];
-        foreach ($tempArr as $key => $value) {
-            if ($order['stat'] == $key) {
-                continue;
+    <div class="centering">
+        <label for="status">Change order status: </label>
+        <select name="status" id="status">
+            <?php
+            //this to not allow admins to change cancelled orders to void dilemmas with stock
+            if ($order['stat'] == 5) {
+                die();
             }
-            echo "<option value='$key'>$value</option>";
-        }
-        ?>
-    </select>
-    <button onclick="changeStatus(<?php echo $orderId; ?>)">Confirm</button>
-    <span id="statusResult"></span>
+            $tempArr = ["Pending", "Confirmed", "Ready", "Delivering", "Delivered"];
+            foreach ($tempArr as $key => $value) {
+                if ($order['stat'] == $key) {
+                    continue;
+                }
+                echo "<option value='$key'>$value</option>";
+            }
+            ?>
+        </select><br>
+        <button onclick="changeStatus(<?php echo $orderId; ?>)">Confirm</button>
+        <span id="statusResult"></span>
+    </div>
 
 </body>
 </html>

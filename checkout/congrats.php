@@ -13,6 +13,7 @@ if (!isset($_SESSION['orderId'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>complete</title>
+    <link rel="stylesheet" href="../Styles/Main.css">
 </head>
 <body>
     <p>

@@ -1,0 +1,17 @@
+.alternate {
+    padding: 0px;
+}
+
+.alternate tr:nth-child(odd){
+    background-color: #fff2f0;
+}
+
+.alternate th {
+    border-radius: 0px;
+    background-color: #E4B9B3;
+    text-align: left;
+    padding: 5px 10px;
+}
+.alternate td {
+    padding: 5px 10px;
+}

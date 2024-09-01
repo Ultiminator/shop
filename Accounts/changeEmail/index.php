@@ -20,6 +20,11 @@ if (!isset($_SESSION['loggedin'])){
         <script src="scripts.js"></script>
     </head>
     <body>
+        <!-- menu bar here -->
+        <?php
+        $location = "../../";
+        include "$location/head.php";
+        ?>
         <h1>change your Email adress (<?php echo $_SESSION['userEmail'] ?>)</h1>
         <table>
             <tr class="submit">

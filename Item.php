@@ -97,9 +97,15 @@ function invalidData($itemId){
     </title>
     <link rel="stylesheet" href="./Styles/Main.css">
     <link rel="stylesheet" href="./Styles/Structures.css">
+    <link rel="stylesheet" href="./Styles/headTail.css">
     <script src="Scripts.js"></script>
 </head>
 <body>
+    <!-- menu bar here -->
+    <?php
+    $location = "./";
+    include "$location/head.php";
+    ?>
     <table class="imgContainer" id="imgContainer">
         <tr>
             <td>

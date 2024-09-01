@@ -5,7 +5,8 @@
         <a href="<?php echo $location . "Index.php"; ?>">TODO</a>
     </div>
     <div id="search">
-        <input type="text" class="search" oninput=searchItems(<?php echo "'" . $location . "'"; ?>) id="searchInput">
+        <input type="text" class="search" autocomplete="new-password" id="searchInput"
+               oninput=searchItems(<?php echo "'" . $location . "'"; ?>) >
         <div id="searchResult"></div>
     </div>
     <div class="right">

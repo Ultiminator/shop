@@ -72,6 +72,11 @@ unset ($orders);
         <script src="./script.js"></script>
     </head>
 <body>
+    <!-- menu bar here -->
+    <?php
+        $location = "../../";
+        include "$location/head.php";
+        ?>
     <div class="centering">
         <h1>Return requests of (<?php echo $_SESSION['userEmail']; ?>)</h1>
     </div>

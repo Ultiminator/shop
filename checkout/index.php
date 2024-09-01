@@ -72,7 +72,11 @@ foreach ($chart as $itemId => $qnty){
     <script src="./script.js"></script>
 </head>
 <body>
-
+    <!-- menu bar here -->
+    <?php
+    $location = "../";
+    include "$location/head.php";
+    ?>
     <h1>Order Items</h1>
     <table>
         <tr>

@@ -47,7 +47,7 @@ div#menuBar #search {
     height: fit-content;
     margin: 8px;
     padding: 0px;
-    border-radius: 20px;
+    border-radius: 17px;
     vertical-align: middle;
     align-content: center;
     align-items: center;
@@ -74,8 +74,8 @@ div#menuBar input:focus {
     outline: none;
 }
 div#menuBar div#search:focus-within {
-    /* outline: 2px #e84a27 solid; */
-    box-shadow: 0px 0px 20px 0px #171C25;
+    outline: 1px #e84a27 solid;
+    box-shadow: 0px 0px 5px 0px #171C25;
 }
 
 div#search div#searchResult {

@@ -78,6 +78,11 @@ foreach ($items as $index => $item) {
     <script src="./script.js"></script>
 </head>
 <body>
+    <!-- menu bar here -->
+    <?php
+    $location = "../../";
+    include "$location/head.php";
+    ?>
     <div class="centering">
         <h1>Request a return</h1>
     </div>

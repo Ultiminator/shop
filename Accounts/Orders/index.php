@@ -47,8 +47,12 @@ foreach ($orders as $key => $order){
         if (mysqli_num_rows($result) > 1) {
             die("somthing fancy happened");
         }
-        $row = mysqli_fetch_assoc($result);
-        $items[$index]['name'] = $row['name'];
+        if (mysqli_num_rows($result) != 0) {
+            $row = mysqli_fetch_assoc($result);
+            $items[$index]['name'] = $row['name'];
+        } else {
+            $items[$index]['name'] = "Deleted item";
+        }
     }
     $orders[$key]['items'] = $items;
 }
@@ -68,6 +72,11 @@ foreach ($orders as $key => $order){
         <script src="./script.js"></script>
     </head>
 <body>
+    <!-- menu bar here -->
+    <?php
+        $location = "../../";
+        include "$location/head.php";
+        ?>
     <div class="centering">
         <h1>Orders of (<?php echo $_SESSION['userEmail']; ?>)</h1>
     </div>

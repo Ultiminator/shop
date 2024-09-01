@@ -13,6 +13,11 @@
         <script src="script.js"></script>
     </head>
 <body>
+    <!-- menu bar here -->
+    <?php
+    $location = "../../";
+    include "$location/head.php";
+    ?>
     <table>
         <tr>
             <td>

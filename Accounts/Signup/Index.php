@@ -15,18 +15,23 @@ session_start();
         <script src="Scripts.js"></script>
     </head>
     <body>
+        <!-- menu bar here -->
+        <?php
+        $location = "../../";
+        include "$location/head.php";
+        ?>
         <h1>Create a new account</h1>
         <table>
             <tr>
                 <td><label for="email">Email adress:</label></td>
-                <td><input type="text" name="email" id="email"></td>
+                <td><input type="email" name="email" id="email"></td>
                 <td></td>
             </tr>
             <tr>
                 <td colspan="3">
                     <span>
                         you should provide a valid and working email adress
-                        as it will be used in security measures.
+                        <br> as it will be used in security measures.
                     </span>
                 </td>
             </tr>
@@ -43,9 +48,8 @@ session_start();
             <tr>
                 <td colspan="3">
                     <span>
-                        choose a strong pasword which should contain 
-                        a compination of capital and samll letters,
-                        numbers and special charcters.
+                        choose a strong pasword which should contain a compination 
+                        <br> of capital and samll letters, numbers and special charcters.
                     </span>
                 </td>
             </tr>

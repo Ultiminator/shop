@@ -21,6 +21,11 @@ if (!isset($_SESSION['orderId'])){
     <link rel="stylesheet" href="../Styles/Main.css">
 </head>
 <body>
+    <!-- menu bar here -->
+    <?php
+    $location = "../";
+    include "$location/head.php";
+    ?>
     <p>
         <h1>congratulations!</h1>
         <div class="centering">

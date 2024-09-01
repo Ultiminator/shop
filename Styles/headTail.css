@@ -97,6 +97,7 @@ div#searchResult a {
     height: 40px;
     padding: 0px 30px;
 }
-div#searchResult a * {
+div#searchResult a span {
     color: #171C25;
+    font-family: "noto bold";
 }

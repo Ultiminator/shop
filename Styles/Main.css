@@ -121,7 +121,7 @@ label {
     margin: 0 0 5px 5px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     font-family: "noto bold";
 }

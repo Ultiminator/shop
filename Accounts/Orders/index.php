@@ -56,14 +56,22 @@ foreach ($orders as $key => $order){
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders</title>
-    <script src="./script.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orders</title>
+        <link rel="stylesheet" href="../../Styles/Main.css">
+        <link rel="stylesheet" href="../../Styles/tables.css">
+        <link rel="stylesheet" href="../../Styles/headTail.css">
+        <link rel="stylesheet" href="../../Styles/Structures.css">
+        <script src="../../Scripts.js"></script>
+        <script src="./script.js"></script>
+    </head>
 <body>
-    <table>
+    <div class="centering">
+        <h1>Orders of (<?php echo $_SESSION['userEmail']; ?>)</h1>
+    </div>
+    <table class="alternate">
         <tr>
             <th>order Id</th>
             <th>Items</th>
@@ -132,7 +140,9 @@ foreach ($orders as $key => $order){
         }
         ?>
     </table>
-    <a href="../returns/return.php">request a return</a>
-    <a href="../returns/"> Manage returns</a>
+    <div class="centering">
+        <a href="../returns/return.php">request a return</a>
+        <a href="../returns/"> Manage returns</a>
+    </div>
 </body>
 </html>

@@ -7,11 +7,15 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <title>Create a New Account</title>
-        <link href="../Styles/Forms.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../Styles/Main.css">
+        <link rel="stylesheet" href="../../Styles/tables.css">
+        <link rel="stylesheet" href="../../Styles/headTail.css">
+        <link rel="stylesheet" href="../../Styles/Structures.css">
+        <script src="../../Scripts.js"></script>
         <script src="Scripts.js"></script>
     </head>
     <body>
-        <h1>create a new account</h1>
+        <h1>Create a new account</h1>
         <table>
             <tr>
                 <td><label for="email">Email adress:</label></td>

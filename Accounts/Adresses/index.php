@@ -29,40 +29,55 @@ if (mysqli_num_rows($result) > 0){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adresses</title>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/headTail.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
+    <link rel="stylesheet" href="../../Styles/fullscrenBox.css">
+    <script src="../../Scripts.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-    <h1><?php echo "Adresses for (" . $_SESSION['userEmail'] . ")"?></h1>
+    <!-- menu bar here -->
     <?php
-    if (isset($adresses)){
-        foreach ($adresses as $adress){
-            echo "<table class='adress'>";
-            echo "<tr><td colspan='2'>";
-            echo $adress['name'];
-            echo "</td></tr>";
-            echo "<tr><td>Phone: </td>";
-            echo "<td>" . $adress['phone'] . "</td></tr>";
-            echo "<tr><td>Adress: </td>";
-            echo "<td>" . $adress['adress'] . "</td></tr>";
-            echo "<tr><td>";
-            echo "<button onclick='editAdress(";
-            echo $adress['id'] . ", \"" . $adress['name'] . "\", \"";
-            echo $adress['phone'] . "\", \"" . $adress['adress'] . "\"";
-            echo ")'>edit</button>";
-            echo "</td>";
-            echo "<td>";
-            echo "<button onclick='removeAdress(";
-            echo $adress['id'];
-            echo ")'>remove</button>";
-            echo "</td></tr>";
-            echo "</table>";
-        }
-    }else{
-        echo "<p>No adresses added</p>";
-    }
+    $location = "../../";
+    include "$location/head.php";
     ?>
-    <button onclick="editAdress('000','','','')">Add Adress</button>
-    <div class="editAdress" id="editAdress" hidden>
+    <h1><?php echo "Adresses of (" . $_SESSION['userEmail'] . ")"?></h1>
+    <div class="centering">
+        <button onclick="editAdress('000','','','')">Add Adress</button>
+    </div>
+    <div id="adressesContainer">
+        <?php
+        if (isset($adresses)){
+            foreach ($adresses as $adress){
+                echo "<table class='adress'>";
+                echo "<tr><td colspan='2'>";
+                echo $adress['name'];
+                echo "</td></tr>";
+                echo "<tr><td>Phone: </td>";
+                echo "<td>" . $adress['phone'] . "</td></tr>";
+                echo "<tr><td>Adress: </td>";
+                echo "<td>" . $adress['adress'] . "</td></tr>";
+                echo "<tr><td>";
+                echo "<button onclick='editAdress(";
+                echo $adress['id'] . ", \"" . $adress['name'] . "\", \"";
+                echo $adress['phone'] . "\", \"" . $adress['adress'] . "\"";
+                echo ")'>edit</button>";
+                echo "</td>";
+                echo "<td>";
+                echo "<button onclick='removeAdress(";
+                echo $adress['id'];
+                echo ")'>remove</button>";
+                echo "</td></tr>";
+                echo "</table>";
+            }
+        }else{
+            echo "<p>No adresses added</p>";
+        }
+        ?>
+    </div>
+    <div class="fullscren" id="editAdress" hidden>
         <table>
             <tr>
                 <td>Name: </td>
@@ -92,7 +107,7 @@ if (mysqli_num_rows($result) > 0){
             </tr>
             <tr>
                 <td colspan="2">
-                    <span id="result">Ahmed Salah mehana</span>
+                    <span id="result"></span>
                 </td>
             </tr>
         </table>

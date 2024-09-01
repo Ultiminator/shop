@@ -70,3 +70,8 @@ div#itemInfo *{
     text-align: left;
 }
 
+div#adressesContainer {
+    padding: 0px 15%;
+    text-align: center;
+}
+

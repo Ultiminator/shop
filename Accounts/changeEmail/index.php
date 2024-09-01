@@ -11,7 +11,12 @@ if (!isset($_SESSION['loggedin'])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <title>Change Email</title>
-        <link href="../Styles/Forms.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../Styles/Main.css">
+        <link rel="stylesheet" href="../../Styles/tables.css">
+        <link rel="stylesheet" href="../../Styles/headTail.css">
+        <link rel="stylesheet" href="../../Styles/Structures.css">
+        <link rel="stylesheet" href="../../Styles/fullscrenBox.css">
+        <script src="../../Scripts.js"></script>
         <script src="scripts.js"></script>
     </head>
     <body>

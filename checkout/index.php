@@ -64,6 +64,11 @@ foreach ($chart as $itemId => $qnty){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkout</title>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/headTail.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
+    <script src="../../Scripts.js"></script>
     <script src="./script.js"></script>
 </head>
 <body>
@@ -124,7 +129,7 @@ foreach ($chart as $itemId => $qnty){
     </table>
 
     <h1>Billing: </h1>
-    <p>currently we accept "pay on delivery" only.</p>
+    <div class="centering">currently we accept "pay on delivery" only.</div>
 
     <h1>Cost:</h1>
     <table>
@@ -141,9 +146,10 @@ foreach ($chart as $itemId => $qnty){
             <td><?php echo $total + $shiping; ?></td>
         </tr>
     </table>
-
-    <button onclick="confirmOrder()">Confirm Order</button>
-    <span id="result"></span>
+    <div class="centering">
+        <button onclick="confirmOrder()">Confirm Order</button>
+        <span id="result"></span>
+    </div>
     
 </body>
 </html>

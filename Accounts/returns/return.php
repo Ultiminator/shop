@@ -70,9 +70,17 @@ foreach ($items as $index => $item) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Return an item</title>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/headTail.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
+    <script src="../../Scripts.js"></script>
     <script src="./script.js"></script>
 </head>
 <body>
+    <div class="centering">
+        <h1>Request a return</h1>
+    </div>
     <table>
         <tr>
             <td>

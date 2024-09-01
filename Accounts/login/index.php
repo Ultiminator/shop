@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
-    <script src="script.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log in</title>
+        <link rel="stylesheet" href="../../Styles/Main.css">
+        <link rel="stylesheet" href="../../Styles/tables.css">
+        <link rel="stylesheet" href="../../Styles/headTail.css">
+        <link rel="stylesheet" href="../../Styles/Structures.css">
+        <link rel="stylesheet" href="../../Styles/fullscrenBox.css">
+        <script src="../../Scripts.js"></script>
+        <script src="script.js"></script>
+    </head>
 <body>
     <table>
         <tr>

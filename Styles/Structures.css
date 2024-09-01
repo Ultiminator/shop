@@ -2,9 +2,10 @@
 div#sidebar {
     /* fixed position so it doesn't scroll */
     position: fixed;
-    /* height of the whole view and 250px width */
+    /* height of the whole view and 15% width */
     height: 100%;
-    width: 250px;
+    min-height: 100%;
+    width: 15%;
     /* prevent unexpected scroll */
     overflow-x: hidden;
     /* some styles */
@@ -24,8 +25,8 @@ div#itemsContianer {
     /* padding to make the space arround the cards consistent with 
        the space between them */
     padding: 10px;
-    /* leave space for the fixed side bar (which is 250px wide)*/
-    margin-left: 250px;
+    /* leave space for the fixed side bar (which is 15% wide)*/
+    margin-left: 15%;
 }
 
 div.centering {

@@ -60,6 +60,13 @@ button:active, select:active {
     background-color: #E84A27;
     box-shadow: inset -1px -1px 1px 0px #E4B9B3;
 }
+button:disabled {
+    background-color: #e84a275d;
+    cursor: not-allowed;
+}
+button:disabled:active {
+    background-color: #e84a275d;
+}
 
 table {
     border-radius: 5px;

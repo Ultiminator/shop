@@ -65,12 +65,21 @@ foreach ($chart as $itemId => $qnty){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chart</title>
     <script src="./script.js"></script>
+    <script src="../../scripts.js"></script>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/headTail.css">
+    <link rel="stylesheet" href="../../Styles/tables.css">
+    <link rel="stylesheet" href="../../Styles/Structures.css">
 </head>
 <body>
+    <?php
+    $location = "../../";
+    include "../../head.php"; 
+    ?>
     <span id="result"></span>
-    <table>
+    <table class="alternate">
         <tr>
-            <th>X</th>
+            <th>Remove</th>
             <th>Name</th>
             <th>Price</th>
             <th>Available</th>
@@ -81,7 +90,7 @@ foreach ($chart as $itemId => $qnty){
         foreach ($items as $itemId => $item){
             echo "<tr>";
             echo "<td>";
-            echo "<button onclick='removeItem($itemId)'>X</button>";
+            echo "<button onclick='removeItem($itemId)'>Remove</button>";
             echo "</td>";
             echo "<td><a id='$itemId' href='../../item.php?id=$itemId'>";
             echo $item['name'];
@@ -96,13 +105,14 @@ foreach ($chart as $itemId => $qnty){
         ?>
         <tr>
             <td>
-                <button onclick="removeItem(0)">X</button>
+                <button onclick="removeItem(0)">Remove All</button>
             </td>
             <td colspan="4">Total</td>
             <td><?php echo $total; ?></td>
         </tr>
     </table>
     <?php
+    echo "<div class='centering'>";
     echo "<button onclick='checkout()' id='checkout'";
     if (!$available){
         echo " disabled>chekout</button>";
@@ -110,6 +120,7 @@ foreach ($chart as $itemId => $qnty){
     }else {
         echo ">checkout</button>";
     }
+    echo "</div>";
     ?>
 </body>
 </html>

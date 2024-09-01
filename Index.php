@@ -1,4 +1,5 @@
 <?php
+session_start();
 //get shop name n db parameters
 require "./variables.php";
 // connect to db
@@ -51,9 +52,14 @@ if ($result) {
     <link rel="stylesheet" href="./Styles/Main.css">
     <link rel="stylesheet" href="./Styles/Structures.css">
     <link rel="stylesheet" href="./Styles/Cards.css">
+    <link rel="stylesheet" href="./Styles/headTail.css">
 </head>
 <body onload="loadItems()">
     <!-- menu bar here -->
+    <?php
+    $location = "./";
+    include "$location/head.php";
+    ?>
 
     <!-- sidde navigtion for filters -->
     <div id="sidebar">

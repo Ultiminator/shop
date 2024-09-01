@@ -121,7 +121,7 @@ function createItem(id, name, img, price, discount) {
     card.appendChild(priceSpan);
 
     //crete a discount badg if there is dicount
-    if (discount) {
+    if (discount > 0) {
         const discountBdge = document.createElement("span");
         discountBdge.className = "discountBadge";
         const discountText = document.createTextNode("-" + discount + "%");
@@ -130,4 +130,24 @@ function createItem(id, name, img, price, discount) {
     }
 
     return card;
+}
+
+// this function to search using search bar in menu bar
+function searchItems(location) {
+    //prepar result 
+    let result = document.getElementById("searchResult");
+    //get input
+    let input = document.getElementById("searchInput").value.trim();
+    if (input.length == 0) {
+        result.innerHTML = "";
+        return;
+    }
+    //initiate request
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        result.innerHTML = this.responseText;
+    }
+    xhr.open("POST", location + "search.php");
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send("input=" + input + "&location=" + location);
 }

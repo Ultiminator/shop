@@ -1,8 +1,8 @@
 <div id="menuBar">
     <div class="left">
         <a href="<?php echo $location . "Index.php"; ?>">Home</a>
-        <a href="<?php echo $location . "Index.php"; ?>">To be added</a>
-        <a href="<?php echo $location . "Index.php"; ?>">TODO</a>
+        <a href="<?php echo $location . "About"; ?>">About</a>
+        <a href="<?php echo $location . "About/Contact.php"; ?>">Contact us</a>
     </div>
     <div id="search">
         <input type="text" class="search" autocomplete="new-password" id="searchInput"

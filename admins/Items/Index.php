@@ -5,6 +5,9 @@ if(!isset($_SESSION['adminId'])){
     header('location: ../login');
 }
 
+$minPrice = 0;
+$maxPrice = 0;
+
 //connect to the database to get some info
 include "../../variables.php";
 $dbConn = mysqli_connect($mysqlHost, $mysqlUser, $mysqlPassword, $dbName);
@@ -26,9 +29,14 @@ for ($i=0; $i < mysqli_num_rows($result); $i++) {
 //get min and max price
 $query = "select MIN(price) as min, Max(price) as max from items";
 $result = mysqli_query($dbConn, $query);
-$row = mysqli_fetch_assoc($result);
-$minPrice = $row['min'];
-$maxPrice = $row['max'];
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    if (isset($row['min'])) {
+        $minPrice = $row['min'];
+        $maxPrice = $row['max'];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -76,7 +76,7 @@ function loadItems(){
         try {
             items = JSON.parse(this.responseText);
         } catch (error) {
-            div.innerHTML = error;
+            div.innerHTML = "No Items Found";
         }
         for (item of items) {
             div.appendChild(createItem (item['id'], item['name'], item['img'], 
